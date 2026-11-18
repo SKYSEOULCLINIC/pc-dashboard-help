@@ -1,0 +1,155 @@
+/* 도움말·개인정보 처리방침·소개 페이지 공용(프로그램 안의 도움말 창과 GitHub Pages에서 같은 파일을 쓴다) */
+:root {
+  --ink: #182230;
+  --muted: #5b6b80;
+  --line: #dce5ef;
+  --soft: #f5f8fc;
+  --accent: #1a4f8f;
+  --warn-bg: #fff4e5;
+  --warn-ink: #8a5a12;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #fff;
+  color: var(--ink);
+  font: 15px/1.7 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+a { color: var(--accent); }
+
+.page {
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 28px 24px 64px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.toc {
+  background: var(--soft);
+  border-right: 1px solid var(--line);
+  padding: 22px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.toc h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.toc li { margin: 4px 0; }
+
+.toc a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+.content {
+  max-width: 900px;
+  padding: 28px 32px 80px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+h2 {
+  border-bottom: 2px solid var(--line);
+  font-size: 20px;
+  margin: 44px 0 12px;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 26px 0 8px;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 10px 0 16px;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: var(--soft); }
+
+figure {
+  margin: 14px 0 22px;
+}
+
+figure img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.note, .warn {
+  border-radius: 8px;
+  margin: 12px 0;
+  padding: 10px 14px;
+}
+
+.note { background: var(--soft); border: 1px solid var(--line); }
+.warn { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid #f0d3a6; }
+
+kbd, .ui {
+  background: #eef2f7;
+  border: 1px solid #d5dde8;
+  border-radius: 4px;
+  font-size: 13px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 48px;
+  padding-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { height: auto; position: static; border-right: 0; border-bottom: 1px solid var(--line); }
+  .content { padding: 20px 16px 60px; }
+}
